@@ -1,21 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://bynebevdwu6ln"]
+[gd_scene load_steps=3 format=3 uid="uid://bynebevdwu6ln"]
 
 [ext_resource type="PackedScene" uid="uid://cyhgdribol63g" path="res://Game/Player/Player.tscn" id="1_0dbar"]
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_xiv7l"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xcbwy"]
-size = Vector2(148, 20)
+[ext_resource type="PackedScene" uid="uid://c33vo77cut0mt" path="res://Game/Platforms/NormalPad.tscn" id="2_u35wd"]
 
 [node name="game" type="Node2D"]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-physics_material_override = SubResource("PhysicsMaterial_xiv7l")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(186, 231)
-shape = SubResource("RectangleShape2D_xcbwy")
-debug_color = Color(0, 0, 0, 0.419608)
-
 [node name="Player" parent="." instance=ExtResource("1_0dbar")]
 position = Vector2(180, 101)
+
+[node name="NormalPad" parent="." instance=ExtResource("2_u35wd")]
+position = Vector2(105, 307)

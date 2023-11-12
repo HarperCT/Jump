@@ -4,6 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://bbfnujbgdmils" path="res://icon.svg" id="1_unk8a"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6lgi7"]
+radius = 49.0
+height = 102.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kvt74"]
 atlas = ExtResource("1_unk8a")
@@ -27,5 +29,8 @@ script = ExtResource("1_0sfgj")
 shape = SubResource("CapsuleShape2D_6lgi7")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.6875, 0.695313)
 sprite_frames = SubResource("SpriteFrames_ovylp")
 animation = &"Idle"
+
+[node name="Camera2D" type="Camera2D" parent="."]
