@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://c33vo77cut0mt"]
+
+[ext_resource type="Script" path="res://Game/Platforms/NormalPad.gd" id="1_tll2v"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mafq4"]
+size = Vector2(193, 20)
+
+[sub_resource type="TileSet" id="TileSet_ydml8"]
+
+[node name="NormalPad" type="StaticBody2D"]
+script = ExtResource("1_tll2v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(86.5, 0)
+shape = SubResource("RectangleShape2D_mafq4")
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_ydml8")
+format = 2
+
+[node name="Label" type="Label" parent="."]
+offset_left = -11.0
+offset_top = -11.0
+offset_right = 184.0
+offset_bottom = 12.0
+text = "----Normal Jump Pad ------"
