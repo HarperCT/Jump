@@ -1,12 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://bynebevdwu6ln"]
+[gd_scene load_steps=4 format=3 uid="uid://bynebevdwu6ln"]
 
 [ext_resource type="PackedScene" uid="uid://cyhgdribol63g" path="res://Game/Player/Player.tscn" id="1_0dbar"]
+[ext_resource type="Script" path="res://Game/game.gd" id="1_c4ylx"]
 [ext_resource type="PackedScene" uid="uid://c33vo77cut0mt" path="res://Game/Platforms/NormalPad.tscn" id="2_u35wd"]
 
 [node name="game" type="Node2D"]
-
-[node name="Player" parent="." instance=ExtResource("1_0dbar")]
-position = Vector2(180, 101)
+script = ExtResource("1_c4ylx")
 
 [node name="NormalPad" parent="." instance=ExtResource("2_u35wd")]
 position = Vector2(105, 307)
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("1_0dbar")]
+position = Vector2(210, 157)

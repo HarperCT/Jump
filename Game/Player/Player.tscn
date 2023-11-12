@@ -1,17 +1,13 @@
 [gd_scene load_steps=6 format=3 uid="uid://cyhgdribol63g"]
 
-[ext_resource type="Script" path="res://Game/Player/Player.gd" id="1_0sfgj"]
 [ext_resource type="Texture2D" uid="uid://bbfnujbgdmils" path="res://icon.svg" id="1_unk8a"]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6lgi7"]
-radius = 49.0
-height = 102.0
+[ext_resource type="Script" path="res://Game/Player/Player.gd" id="1_xmhiq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kvt74"]
 atlas = ExtResource("1_unk8a")
 region = Rect2(0, 0, 128, 128)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_ovylp"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_2e54f"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -22,15 +18,20 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Player" type="CharacterBody2D"]
-script = ExtResource("1_0sfgj")
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gisbp"]
+size = Vector2(88, 20)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CapsuleShape2D_6lgi7")
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_xmhiq")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.6875, 0.695313)
-sprite_frames = SubResource("SpriteFrames_ovylp")
+sprite_frames = SubResource("SpriteFrames_2e54f")
 animation = &"Idle"
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 34)
+shape = SubResource("RectangleShape2D_gisbp")
+one_way_collision = true

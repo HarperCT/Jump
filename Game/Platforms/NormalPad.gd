@@ -1,7 +1,8 @@
 extends StaticBody2D
+class_name BaseJumpPad
 
+const bounceHeight = -600
 
-# Make player go x high
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
